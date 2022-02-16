@@ -1,0 +1,90 @@
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+.container {
+    overflow-x: hidden;
+}
+
+.header-section{
+    margin-top: 37px;
+}
+
+.header-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #31A5AC;
+}
+
+.header-img{
+    width: 45px;
+    height: 45px;
+    margin-left: 15px;
+}
+
+.header-subtitle{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #390a75;
+}
+
+
+
+.section-left img{
+    height : 677px;
+}
+
+
+
+.section-right{
+    background-color: #F8F8F8;
+    padding: 40px;
+    margin: 0px;
+    min-width : 542px;
+    
+}
+
+.income-title, .expense-title{
+    font-family: 'Roboto', sans-serif;;
+    font-weight: 500;
+}
+
+.income-input-title{
+    font-family: 'Roboto', sans-serif;;
+    font-weight: 700;
+   ;
+}
+
+.expenses-title{
+    font-family: 'Roboto', sans-serif;;
+    font-weight: 500;
+}
+
+.food-title > p {
+    font-family: 'Roboto', sans-serif;;
+    font-weight: 700;
+}
+.rent-title > p {
+    font-family: 'Roboto', sans-serif;;
+    font-weight: 700;
+}
+.clothes-title > p {
+    font-family: 'Roboto', sans-serif;;
+    font-weight: 700;
+}
+
+.calc-btn{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.total-expense, .balance, .save, .save-btn, .saving-amount, .remaining-amount{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .section-left img{
+        height : auto;
+    }
+}

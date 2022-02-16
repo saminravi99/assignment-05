@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Finance Inc. | Assignment-05</title>
+
+    <!-- FontAwesome Icons Script -->
+    <script src="https://kit.fontawesome.com/5f2679c5dc.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon Link  -->
+    <link rel="shortcut icon" href="./img/moneygram-favicon.jpg" type="image/x-icon">
+
+    <!-- Local Style Sheet -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- Bootstrap Style Sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+
+        <div class="container  header-section">
+            <div class="d-flex justify-content-center align-items-center">
+                <h1 class="header-title">Azure Finance Inc.</h1>
+                <img class="img-fluid header-img" src="./img/moneygram-logo.jpg" alt="">
+            </div>
+            <div class=" text-center header-subtitle">
+                <h4>Save Your Money!</h4>
+            </div>
+        </div>
+
+
+    </header>
+
+    <main>
+
+        <!-- Main Section -->
+        <section class=" container my-4 ">
+
+            <div class="d-flex justify-content-around align-items-center row mx-auto  main-section">
+
+                <div class=" d-flex justify-content-center section-left col-xl-6 col-12 ">
+                    <img class=" img-fluid  section-img w-100 " src="./img/Moneygram.jpg" alt="">
+                </div>
+
+                <div class="container section-right col-xl-6 col-12 mt-xl-0 mt-5">
+                    <div class="row mb-3">
+                        <div class="col">
+                        <h5 class=" text-center income-title">Income</h5>
+                        </div>
+                    </div>
+                    <div class=" d-flex justify-content-center">
+                        <div class="row d-flex mb-3">
+                        <div class="col d-flex justify-content-end income-input-title">
+                            <p>Income:</p>
+                        </div>
+                        <div class="col">
+                            <input class=" me-3 " type="text">
+                        </div>
+                    </div>
+                    </div>
+
+                     <div class="row mb-3">
+                        <div class="col">
+                        <h5 class=" text-center expenses-title ">Expenses</h5>
+                        </div>
+                    </div>
+
+
+                   <div class=" d-flex flex-column align-items-center ">
+                            <div class="row mb-3">
+                            <div class="col d-flex justify-content-end food-title">
+                                <p>Food:</p> 
+                            </div>
+                            <div class="col">
+                                <input type="text">
+                            </div>
+                            
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col d-flex justify-content-end rent-title">
+                                    <p>Rent:</p> 
+                                </div>
+                                <div class="col">
+                                    <input  type="text">
+                                </div>
+                                
+                            </div>
+                            <div class="row mb-3 me-2">
+                                <div class="col d-flex justify-content-end clothes-title">
+                                    <p>Clothes:</p> 
+                                </div>
+                                <div class="col">
+                                    <input type="text">
+                                </div>
+                            
+                            </div>
+                   </div>
+                    <div class="row mb-3">
+                        <div class="col d-flex justify-content-center">
+                            <button class="btn btn-primary calc-btn">Calculate</button>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col d-flex justify-content-center total-expense">
+                            <p>Total Expense:$ <span>0</span></p>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center balance">
+                            <p>Balance:$ <span>0</span></p>
+                        </div>
+                        
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <div class=" me-2 save d-flex align-items-center"><p class=" mb-0 ">Save: </p></div>
+                            <div class=" me-2 "><input type="text"></div>
+                            <div class=" me-2 "><p class=" mb-0">%</p></div>
+                            <div class=" me-2 "><button class="btn btn-primary save-btn ">Save</button></div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col d-flex justify-content-center saving-amount">
+                            <p>Saving Amount:$ <span>0</span></p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col d-flex justify-content-center remaining-amount">
+                            <p>Remaining Balance:$ <span>0</span></p>
+                        </div>  
+                    </div>
+
+                </div>
+
+
+                
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+
+
+    <!-- Local Script File  -->
+    <script src="./js/script.js"></script>
+
+    <!-- BootStrap Script File  -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
