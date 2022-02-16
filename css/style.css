@@ -39,7 +39,7 @@ font-family: 'Roboto', sans-serif; */
     background-color: #F8F8F8;
     padding: 40px;
     margin: 0px;
-    
+    max-width: 542px;
 }
 
 .income-title, .expense-title{
