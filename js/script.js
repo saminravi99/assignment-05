@@ -19,16 +19,22 @@ document.getElementById("calc-btn").addEventListener("click", function() {
     || document.getElementById("income-input").value == "" 
     || document.getElementById("food-input").value == "" 
     || document.getElementById("rent-input").value == "" 
-    || document.getElementById("clothes-input").value == "" // If empty string is Given
-    || document.getElementById("income-input").value < 0
-    || document.getElementById("food-input").value < 0
-    || document.getElementById("rent-input").value < 0  
-    || document.getElementById("clothes-input").value < 0){  // If negative value is Given
+    || document.getElementById("clothes-input").value == "") { // If empty string is Given) 
         alert("Please Enter a Valid amount in all Input fields");
         resetCalculationBtn();
 
     }
     // Main Section Error Handling - Part 2
+    if(document.getElementById("income-input").value < 0
+    || document.getElementById("food-input").value < 0
+    || document.getElementById("rent-input").value < 0
+    || document.getElementById("clothes-input").value < 0){ // If Negative Number is Given
+        alert("Please Do Not Enter Negative Values.");
+        resetCalculationBtn();
+    }
+
+
+    // Main Section Error Handling - Part 3
     if( parseFloat(totalExpense.innerText) > getInputValue("income-input")){
         alert("Your Total Expense is more than yout Income");
         resetCalculationBtn();
