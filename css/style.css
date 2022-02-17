@@ -39,9 +39,19 @@ font-family: 'Roboto', sans-serif; */
     background-color: #F8F8F8;
 }
 
+.income-title, .expenses-title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
 .input-income-title, .input-food-title, .input-rent-title,.input-clothes-title{  
     /* border: 2px solid black; */
-    width: 130px;
+    width: 90px;
+}
+
+input[type=text]{
+    background-color: #DCDCDC;
+    border: transparent;
 }
 
 .input-income-title > p, .input-food-title > p, .input-rent-title > p, .input-clothes-title > p, .calc-btn, .total-expense, .balance, .save-title, .percent, .save-btn, .saving-amount, .remaining-balance{
