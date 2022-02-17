@@ -11,7 +11,7 @@ document.getElementById("calc-btn").addEventListener("click", function() {
     document.getElementById("balance").innerText = (getInputValue("income-input") - parseFloat(totalExpense)).toFixed(2);
     document.getElementById("total-expense").innerText = totalExpense;
 
-    // Main Section Error Handling - 1  
+    // Main Section Error Handling - Part 1  
     if  (isNaN( document.getElementById("income-input").value) == true  
     || isNaN(document.getElementById("food-input").value) == true 
     || isNaN(document.getElementById("rent-input").value) == true 
@@ -28,7 +28,7 @@ document.getElementById("calc-btn").addEventListener("click", function() {
         resetCalculationBtn();
 
     }
-    // Main Section Error Handling - 2
+    // Main Section Error Handling - Part 2
     if( parseFloat(totalExpense.innerText) > getInputValue("income-input")){
         alert("Your Total Expense is more than yout Income");
         resetCalculationBtn();
@@ -49,20 +49,23 @@ document.getElementById("save-btn").addEventListener("click", function(){
     document.getElementById("remaining-balance").innerText = remainingBalance.toFixed(2);
     document.getElementById("saving-amount").innerText = savingAmount.toFixed(2);
 
-    // Bonus Section Error Handling -1  
+    // Bonus Section Error Handling - Part 1  
     if(isNaN(document.getElementById("percent-input").value) == true  // If String Input is Given
     || document.getElementById("percent-input").value == ""  // If empty string is Given
     || document.getElementById("percent-input").value < 0){ //  If negative value is Given
         alert("Please enter a valid percentage");
         resetSaveBtn();
     }
-
-    if(isNaN(savingAmount) == true){ // If percentage value is given but income/ food/ rent/ clothes input value is not Given
+    // Bonus Section Error Handling - Part 2 
+    if(document.getElementById("income-input").value == ""  // If percentage value is given but others input values are empty
+    || document.getElementById("food-input").value == "" 
+    || document.getElementById("rent-input").value == "" 
+    || document.getElementById("clothes-input").value == ""){ 
         alert("Please Enter The Values in Income ,Food, Rent & Clothes Field");
         resetSaveBtn();
     }
 
-    // Bonus Section Error Handling -2
+    // Bonus Section Error Handling - Part 3
     if(parseFloat(savingAmount) > parseFloat(balance)){ //  If Saving Amount is more than Balance Amount
         alert("You Can Not Save More Than Your Balance")
         resetSaveBtn();
