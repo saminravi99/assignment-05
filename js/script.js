@@ -18,23 +18,13 @@ document.getElementById("calc-btn").addEventListener("click", function() {
     // Main Section Error Handling - 1  
     if  (isNaN(incomeInput) == true || isNaN(foodInput) == true || isNaN(rentInput) == true || isNaN(clothesInput) == true || incomeInput == "" || foodInput == "" || rentInput == "" || clothesInput == ""){
         alert("Please Enter a Valid amount");
-        document.getElementById("income-input").value = "";
-        document.getElementById("food-input").value = "";
-        document.getElementById("rent-input").value = "";
-        document.getElementById("clothes-input").value = "";
-        totalExpense.innerText = 0;
-        balance.innerText = 0;
+        resetCalculation();
 
     }
     // Main Section Error Handling - 2
     if( parseFloat(totalExpense.innerText) > parseFloat(incomeInput)){
         alert("Your Total Expense is more than yout Income");
-        document.getElementById("income-input").value = "";
-        document.getElementById("food-input").value = "";
-        document.getElementById("rent-input").value = "";
-        document.getElementById("clothes-input").value = "";
-        totalExpense.innerText = 0;
-        balance.innerText = 0;
+        resetCalculation();
     }
     
 });
@@ -55,15 +45,28 @@ document.getElementById("save-btn").addEventListener("click", function(){
     // Bonus Section Error Handling -1  
     if(isNaN(percentInput) == true || percentInput == ""){
         alert("Please enter a valid percentage");
-        document.getElementById("percent-input").value = "";
-        savingAmount.innerText = 0;
-        remainingBalance.innerText = 0;
+        resetSave();
     }
     // Bonus Section Error Handling -2
     if(parseFloat(savingAmount.innerText) > parseFloat(balance.innerText)){
         alert("You Can Not Save More Than Your Balance")
-        document.getElementById("percent-input").value = "";
-        savingAmount.innerText = 0;
-        remainingBalance.innerText = 0;
+        resetSave();
     }
 });
+
+//shared functions
+
+function resetCalculation(){
+   document.getElementById("income-input").value = "";
+        document.getElementById("food-input").value = "";
+        document.getElementById("rent-input").value = "";
+        document.getElementById("clothes-input").value = "";
+        document.getElementById("total-expense").innerText = 0;
+        document.getElementById("balance").innerText = 0;
+};   
+
+function resetSave(){
+        document.getElementById("percent-input").value = "";
+        document.getElementById("saving-amount").innerText = 0;
+        document.getElementById("remaining-balance").innerText = 0;
+}
