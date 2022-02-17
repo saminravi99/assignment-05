@@ -1,10 +1,9 @@
-/* font-family: 'Montserrat', sans-serif;
-font-family: 'Roboto', sans-serif; */
-
+/* Common Styles   */
 .container {
     overflow-x: hidden;
 }
 
+/* Header Section   */
 .header-section{
     margin-top: 37px;
 }
@@ -26,6 +25,8 @@ font-family: 'Roboto', sans-serif; */
     font-weight: 400;
     color: #390a75;
 }
+
+/* Main Section   */
 
 
 .left-section > img{
@@ -58,12 +59,3 @@ input[type=text]{
       font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
-
-
-
-
-/* @media screen and (max-width: 1000px) {
-    .section-left img{
-        height : auto;
-    }
-}  */
