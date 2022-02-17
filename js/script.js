@@ -1,26 +1,37 @@
 // Click Handler for Calculate Button
 
 document.getElementById("calc-btn").addEventListener("click", function() {
-    let foodInput = document.getElementById("food-input").value;  
-    let rentInput = document.getElementById("rent-input").value;
-    let clothesInput = document.getElementById("clothes-input").value;
+    const foodInput = getInputValue("food-input");
+    const rentInput = getInputValue("rent-input");
+    const clothesInput = getInputValue("clothes-input");
 
+    let totalExpense = getInnerText("total-expense");
+    totalExpense = (foodInput + rentInput + clothesInput).toFixed(2); 
 
-    const totalExpense = document.getElementById("total-expense");
-    totalExpense.innerText = ( parseFloat(foodInput) + parseFloat(rentInput) + parseFloat(clothesInput)); 
-
-    document.getElementById("balance").innerText = commonIncome() - ( parseFloat(totalExpense.innerText));
+    document.getElementById("balance").innerText = (getInputValue("income-input") - parseFloat(totalExpense)).toFixed(2);
+    document.getElementById("total-expense").innerText = totalExpense;
 
     // Main Section Error Handling - 1  
-    if  (isNaN( document.getElementById("income-input").value) == true  || isNaN(foodInput) == true || isNaN(rentInput) == true || isNaN(clothesInput) == true || document.getElementById("income-input").value == "" || foodInput == "" || rentInput == "" || clothesInput == ""){
+    if  (isNaN( document.getElementById("income-input").value) == true  
+    || isNaN(document.getElementById("food-input").value) == true 
+    || isNaN(document.getElementById("rent-input").value) == true 
+    || isNaN(document.getElementById("clothes-input").value) == true  // If String Input is Given
+    || document.getElementById("income-input").value == "" 
+    || document.getElementById("food-input").value == "" 
+    || document.getElementById("rent-input").value == "" 
+    || document.getElementById("clothes-input").value == "" // If empty string is Given
+    || document.getElementById("income-input").value < 0
+    || document.getElementById("food-input").value < 0
+    || document.getElementById("rent-input").value < 0  
+    || document.getElementById("clothes-input").value < 0){  // If negative value is Given
         alert("Please Enter a Valid amount in all Input fields");
-        resetCalculation();
+        resetCalculationBtn();
 
     }
     // Main Section Error Handling - 2
-    if( parseFloat(totalExpense.innerText) > commonIncome()){
+    if( parseFloat(totalExpense.innerText) > getInputValue("income-input")){
         alert("Your Total Expense is more than yout Income");
-        resetCalculation();
+        resetCalculationBtn();
     }
 });
 
@@ -28,29 +39,33 @@ document.getElementById("calc-btn").addEventListener("click", function() {
 // Click Handler For Savings Button (Bonus Section)
 
 document.getElementById("save-btn").addEventListener("click", function(){
-    let balance = document.getElementById("balance");
-    let percentInput = document.getElementById("percent-input").value;
-    let savingAmount = document.getElementById("saving-amount");
-    let remainingBalance = document.getElementById("remaining-balance");
+    const balance = getInnerText("balance");
+    const percentInput = getInputValue("percent-input");
+    let savingAmount = getInnerText("saving-amount");
+    let remainingBalance = getInnerText("remaining-balance");
 
-    savingAmount.innerText = commonIncome() * (parseFloat(percentInput) / 100);
-    remainingBalance.innerText = parseFloat(balance.innerText) - parseFloat(savingAmount.innerText)
+    savingAmount= getInputValue("income-input") * (percentInput / 100);
+    remainingBalance = parseFloat(balance) - parseFloat(savingAmount);
+    document.getElementById("remaining-balance").innerText = remainingBalance.toFixed(2);
+    document.getElementById("saving-amount").innerText = savingAmount.toFixed(2);
 
     // Bonus Section Error Handling -1  
-    if(isNaN(percentInput) == true || percentInput == "" ){
+    if(isNaN(document.getElementById("percent-input").value) == true  // If String Input is Given
+    || document.getElementById("percent-input").value == ""  // If empty string is Given
+    || document.getElementById("percent-input").value < 0){ //  If negative value is Given
         alert("Please enter a valid percentage");
-        resetSave();
+        resetSaveBtn();
     }
 
-    if(isNaN(savingAmount.innerText) == true){
+    if(isNaN(savingAmount) == true){ // If percentage value is given but income/ food/ rent/ clothes input value is not Given
         alert("Please Enter The Values in Income ,Food, Rent & Clothes Field");
-        resetSave();
+        resetSaveBtn();
     }
 
     // Bonus Section Error Handling -2
-    if(parseFloat(savingAmount.innerText) > parseFloat(balance.innerText)){
+    if(parseFloat(savingAmount) > parseFloat(balance)){ //  If Saving Amount is more than Balance Amount
         alert("You Can Not Save More Than Your Balance")
-        resetSave();
+        resetSaveBtn();
     }
 
     
@@ -58,13 +73,18 @@ document.getElementById("save-btn").addEventListener("click", function(){
 
 //Shared functions
 
-function commonIncome(){
-    let incomeInput = document.getElementById("income-input").value;
-    let income = parseFloat(incomeInput);
-    return income;
-};
+function getInputValue(inputField){
+    const inputValueText = document.getElementById(inputField).value;
+    const inputValue = parseFloat(inputValueText);
+    return inputValue;
+}
 
-function resetCalculation(){
+function getInnerText(fieldId){
+    const fieldValue = document.getElementById(fieldId).innerText;
+    return fieldValue;
+}
+
+function resetCalculationBtn(){
         document.getElementById("income-input").value = "";
         document.getElementById("food-input").value = "";
         document.getElementById("rent-input").value = "";
@@ -73,7 +93,7 @@ function resetCalculation(){
         document.getElementById("balance").innerText = 0;
 };   
 
-function resetSave(){
+function resetSaveBtn(){
         document.getElementById("percent-input").value = "";
         document.getElementById("saving-amount").innerText = 0;
         document.getElementById("remaining-balance").innerText = 0;
