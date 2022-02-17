@@ -34,9 +34,7 @@
 }
 
 .right-section{
-    /* border: 5px solid green; */
-    /* width: 450px; */
-    padding: 20px;
+    padding: 50px 20px;
     background-color: #F8F8F8;
 }
 
@@ -46,7 +44,6 @@
 }
 
 .input-income-title, .input-food-title, .input-rent-title,.input-clothes-title{  
-    /* border: 2px solid black; */
     width: 90px;
 }
 
@@ -56,6 +53,6 @@ input[type=text]{
 }
 
 .input-income-title > p, .input-food-title > p, .input-rent-title > p, .input-clothes-title > p, .calc-btn, .total-expense, .balance, .save-title, .percent, .save-btn, .saving-amount, .remaining-balance{
-      font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
