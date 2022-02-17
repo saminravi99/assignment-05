@@ -43,12 +43,13 @@ document.getElementById("calc-btn").addEventListener("click", function() {
 // Click Handler For Savings Button (Bonus Section)
 
 document.getElementById("save-btn").addEventListener("click", function(){
+    let incomeInput = document.getElementById("income-input").value;
     let balance = document.getElementById("balance");
     let percentInput = document.getElementById("percent-input").value;
     let savingAmount = document.getElementById("saving-amount");
     let remainingBalance = document.getElementById("remaining-balance");
 
-    savingAmount.innerText = parseInt(balance.innerText) * (parseFloat(percentInput) / 100);
+    savingAmount.innerText = parseInt(incomeInput) * (parseFloat(percentInput) / 100);
     remainingBalance.innerText = parseFloat(balance.innerText) - parseFloat(savingAmount.innerText)
 
     // Bonus Section Error Handling -1  
