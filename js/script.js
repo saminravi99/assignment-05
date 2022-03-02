@@ -35,7 +35,7 @@ document.getElementById("calc-btn").addEventListener("click", function() {
 
 
     // Main Section Error Handling - Part 3
-    if( parseFloat(totalExpense) > getInputValue("income-input")){
+    if( parseFloat(totalExpense.innerText) > getInputValue("income-input")){
         alert("Your Total Expense is more than yout Income");
         resetCalculationBtn();
     }
